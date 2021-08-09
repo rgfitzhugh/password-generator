@@ -1,10 +1,13 @@
 // Assignment code here
 
+// variables for password characteristics
 
 var pickUpperCase;
 var pickLowerCase;
 var pickNumber;
 var pickSymbol;
+
+// Strings that are randomly selected based on chosen criteria
 
 upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","S","T","U","V","W","X","Y","Z"];
 lowerCase = ["a","b","c","e","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -22,13 +25,19 @@ get.addEventListener("click", function () {
     document.getElementById("password").placeholder = ps;
 });
 
+// generates the password from the given variables
+
 function generatePassword () {
 
   var pwLength = prompt("Please choose the length of your password? (between 8 and 128 characters)");
-  
+
+// promts the user to pick the password length
+
   if (pwLength < 8 || pwLength > 128) {
-     alert("Please choose a number between 8 and 128 Please try again.");
+     alert("Please choose a number between 8 and 128. Please try again.");
      return ""
+
+// promts the user to confirm the characteristics to be included in the password
 
   } else {
      pickUpperCase = confirm("Would you like to include uppercase letters?");
@@ -36,6 +45,8 @@ function generatePassword () {
      pickNumber = confirm("Would you like to include numbers?");
      pickSymbol = confirm("Would you like to include special characters?");
   }
+
+// alert that appears is the user does not select any characteristic
 
   if (!pickUpperCase && !pickLowerCase && !pickNumber && !pickSymbol) {
     alert("You must choose at least 1 criteria to generate a password");
@@ -90,6 +101,8 @@ function generatePassword () {
     choice = symbol;
   }
   
+  // generates the password from the given variables
+
   var password = []
 
   for (var i = 0; i < pwLength; i++) {
@@ -107,15 +120,3 @@ function generatePassword () {
 function UserInput(ps) {
   document.getElementById("password").textContent = ps;
 }
-
-
-
-// Get references to the #generate element
-//var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-
-  
-
-// Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
