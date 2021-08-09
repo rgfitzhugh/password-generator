@@ -28,7 +28,7 @@ get.addEventListener("click", function () {
 // generates the password from the given variables
 
 function generatePassword () {
-
+// promt to establish the password length
   var pwLength = prompt("Please choose the length of your password? (between 8 and 128 characters)");
 
 // promts the user to pick the password length
