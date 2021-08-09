@@ -1,6 +1,6 @@
 // Assignment code here
 
-
+// variables of the different characteristics of the password
 var pickUpperCase;
 var pickLowerCase;
 var pickNumber;
@@ -23,20 +23,20 @@ get.addEventListener("click", function () {
 });
 
 function generatePassword () {
-
+// promt to establish the password length
   var pwLength = prompt("Please choose the length of your password? (between 8 and 128 characters)");
   
   if (pwLength < 8 || pwLength > 128) {
      alert("Please choose a number between 8 and 128.");
      return ""
-
+//prompts for confirming characteristics of the password
   } else {
      pickUpperCase = confirm("Would you like to include uppercase letters?");
      pickLowerCase = confirm("Would you like to also include lowercase letters?");
      pickNumber = confirm("Would you like to include numbers?");
      pickSymbol = confirm("Would you like to include symbols?");
   }
-
+// if no options are selected when promted
   if (!pickUpperCase && !pickLowerCase && !pickNumber && !pickSymbol) {
     alert("You must choose at least 1 criteria to generate a password");
     return ""
@@ -109,13 +109,3 @@ function UserInput(ps) {
 }
 
 
-
-// Get references to the #generate element
-//var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-
-  
-
-// Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
