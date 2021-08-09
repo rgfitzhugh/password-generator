@@ -27,14 +27,14 @@ function generatePassword () {
   var pwLength = prompt("Please choose the length of your password? (between 8 and 128 characters)");
   
   if (pwLength < 8 || pwLength > 128) {
-     alert("Please choose a number between 8 and 128.");
+     alert("Please choose a number between 8 and 128 Please try again.");
      return ""
 
   } else {
      pickUpperCase = confirm("Would you like to include uppercase letters?");
      pickLowerCase = confirm("Would you like to also include lowercase letters?");
      pickNumber = confirm("Would you like to include numbers?");
-     pickSymbol = confirm("Would you like to include symbols?");
+     pickSymbol = confirm("Would you like to include special characters?");
   }
 
   if (!pickUpperCase && !pickLowerCase && !pickNumber && !pickSymbol) {
